@@ -23,6 +23,8 @@
   a:hover { color:oklch(0.55 0.15 38); }
   section[id] { scroll-margin-top:72px; }
   @media (max-width:768px) { nav[data-hdr-nav] { display:none !important; } }
+  @media (min-width:769px) { button[data-hamburger] { display:none !important; } }
+  @media (max-width:768px) { button[data-hamburger] { display:flex !important; } }
   .hoverop:hover { opacity:0.82; }
   .hoverup:hover { transform:translateY(-2px); }
   .row-item:hover { background:rgba(17,17,20,0.02); }
@@ -52,7 +54,19 @@
           <a href="./free-resources.html" style="font-size:13.5px; font-weight:600; color:oklch(0.55 0.15 38)">무료자료</a>
         </nav>
         <a href="https://pf.kakao.com/_KGxjSX/friend" target="_blank" rel="noopener" class="hoverop" style="font-weight:600; font-size:13.5px; color:#F7F6F3; background:#111114; padding:9px 18px; border-radius:8px; white-space:nowrap; transition:opacity .18s ease">상담 신청</a>
+        <button data-hamburger="1" id="hamburgerBtn" aria-label="메뉴 열기" style="display:none; align-items:center; justify-content:center; width:36px; height:36px; background:transparent; border:none; cursor:pointer; padding:0; flex-direction:column; gap:5px">
+          <span style="display:block; width:20px; height:2px; background:#111114"></span>
+          <span style="display:block; width:20px; height:2px; background:#111114"></span>
+          <span style="display:block; width:20px; height:2px; background:#111114"></span>
+        </button>
       </div>
+    </div>
+    <div id="mobileMenu" style="display:none; flex-direction:column; border-top:1px solid rgba(17,17,20,0.08); background:#F7F6F3; padding:8px clamp(20px,4vw,40px) 16px">
+      <a href="#why" class="mobileMenuLink" style="font-size:15px; font-weight:500; color:rgba(17,17,20,0.72); padding:12px 0; border-bottom:1px solid rgba(17,17,20,0.06)">왜 필요한가</a>
+      <a href="#curriculum" class="mobileMenuLink" style="font-size:15px; font-weight:500; color:rgba(17,17,20,0.72); padding:12px 0; border-bottom:1px solid rgba(17,17,20,0.06)">강의 내용</a>
+      <a href="#howto" class="mobileMenuLink" style="font-size:15px; font-weight:500; color:rgba(17,17,20,0.72); padding:12px 0; border-bottom:1px solid rgba(17,17,20,0.06)">진행 방식</a>
+      <a href="#apply" class="mobileMenuLink" style="font-size:15px; font-weight:500; color:rgba(17,17,20,0.72); padding:12px 0; border-bottom:1px solid rgba(17,17,20,0.06)">수강 안내</a>
+      <a href="./free-resources.html" style="font-size:15px; font-weight:600; color:oklch(0.55 0.15 38); padding:12px 0">무료자료</a>
     </div>
   </header>
 
@@ -310,6 +324,18 @@
     body.style.display = refundOpen ? 'flex' : 'none';
     sign.textContent = refundOpen ? '–' : '+';
   });
+
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', function() {
+      var isOpen = mobileMenu.style.display === 'flex';
+      mobileMenu.style.display = isOpen ? 'none' : 'flex';
+    });
+    document.querySelectorAll('.mobileMenuLink').forEach(function(a) {
+      a.addEventListener('click', function() { mobileMenu.style.display = 'none'; });
+    });
+  }
 
   var sticky = document.getElementById('stickyCta');
   var finalCta = document.getElementById('finalCta');
