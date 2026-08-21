@@ -1,371 +1,357 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>제이아카데미 | 네이버 플레이스·파워링크 직접 운영 강의</title>
-<meta name="description" content="9년간의 실무 데이터로 전하는 네이버 플레이스·파워링크 직접 운영 강의. 대행사 없이 사장님이 직접 확인하고 운영하도록 돕습니다." />
-<meta property="og:title" content="제이아카데미 | 광고비, 어디에 얼마나 쓰였는지 확인해보신 적 있나요?" />
-<meta property="og:description" content="네이버 플레이스·파워링크 직접 운영 줌 강의. 선착순 10명 · 149,000원" />
-<meta property="og:type" content="website" />
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-  :root{ --paper:#F7F6F3; --ink:#111114; --accent:oklch(0.55 0.15 38); --accent-lt:oklch(0.72 0.14 38); }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  body{ background:var(--paper); color:var(--ink); font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
-    line-height:1.62; letter-spacing:-0.011em; word-break:keep-all; overflow-wrap:break-word;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden; padding-bottom:84px; font-feature-settings:'tnum' 1; }
-  li{ list-style:none; }
-  img,svg{ display:block; max-width:100%; }
-  a{ color:var(--ink); text-decoration:none; }
-  a:hover{ color:var(--accent); }
-  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px); }
-  .mono{ font-family:'IBM Plex Mono',monospace; }
-  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.1em; color:rgba(17,17,20,0.42); margin-bottom:18px; }
-  h2.head{ font-weight:800; font-size:clamp(26px,3.6vw,38px); line-height:1.24; letter-spacing:-0.032em; text-wrap:balance; }
-  .btn{ display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:var(--paper);
-    font-weight:600; font-size:15px; padding:16px 26px; border-radius:10px; transition:transform .18s ease; }
-  .btn:hover{ transform:translateY(-2px); color:var(--paper); }
-  .btn .ar{ opacity:0.5; }
-  section{ padding:clamp(56px,8vw,96px) 0; }
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
-  .rv.on{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; } }
-
-  header{ position:sticky; top:0; z-index:50; background:rgba(247,246,243,0.86);
-    backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid rgba(17,17,20,0.08); }
-  header .wrap{ height:64px; display:flex; align-items:center; justify-content:space-between; }
-  .brand{ display:flex; align-items:baseline; gap:10px; }
-  .brand b{ font-weight:800; font-size:16px; letter-spacing:-0.02em; }
-  .brand span{ font-size:10.5px; color:rgba(17,17,20,0.42); letter-spacing:0.08em; }
-  .head-cta{ font-weight:600; font-size:13.5px; color:var(--paper); background:var(--ink); padding:9px 18px; border-radius:8px; }
-  .head-cta:hover{ color:var(--paper); opacity:0.82; }
-
-  .hero{ padding:clamp(56px,9vw,104px) 0 clamp(48px,7vw,80px); }
-  .hero .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:clamp(40px,5vw,64px); align-items:end; }
-  .hero .eyebrow{ color:var(--accent); margin-bottom:24px; }
-  .hero h1{ font-weight:800; font-size:clamp(32px,4.4vw,54px); line-height:1.16; letter-spacing:-0.04em; text-wrap:balance; margin-bottom:24px; }
-  .hero h1 .dim{ color:rgba(17,17,20,0.48); }
-  .hero .sub{ font-size:clamp(15px,1.6vw,17px); color:rgba(17,17,20,0.62); max-width:38ch; text-wrap:pretty; margin-bottom:36px; }
-  .cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; }
-  .meta{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:rgba(17,17,20,0.5); }
-
-  .card{ border:1px solid rgba(17,17,20,0.12); border-radius:14px; background:#FFFEFC; overflow:hidden; }
-  .card-h{ display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid rgba(17,17,20,0.08); }
-  .card-h b{ font-weight:600; font-size:13.5px; }
-  .card-h span{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(17,17,20,0.4); letter-spacing:0.06em; }
-  .row{ display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 20px;
-    border-bottom:1px solid rgba(17,17,20,0.06); cursor:pointer; transition:background .16s ease; }
-  .row:hover{ background:rgba(17,17,20,0.02); }
-  .row .lb{ font-size:13.5px; color:rgba(17,17,20,0.68); }
-  .row .val{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent);
-    filter:blur(6px); opacity:0.75; transition:filter .4s ease, opacity .4s ease; }
-  .row.open .val{ filter:blur(0); opacity:1; }
-  .card-f{ padding:14px 20px; font-size:11.5px; color:rgba(17,17,20,0.42); }
-
-  .two{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(32px,4vw,56px); }
-  .pain{ display:flex; flex-direction:column; }
-  .pain > div{ padding:22px 0; border-top:1px solid rgba(17,17,20,0.12); }
-  .pain > div:last-child{ border-bottom:1px solid rgba(17,17,20,0.12); }
-  .pain p{ font-size:clamp(16px,1.8vw,19px); font-weight:600; letter-spacing:-0.02em; line-height:1.5; text-wrap:pretty; }
-
-  .dark{ background:var(--ink); color:var(--paper); }
-  .dark .eyebrow{ color:rgba(247,246,243,0.45); }
-  .dark .lead p{ font-size:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); text-wrap:pretty; }
-  .lead{ display:flex; flex-direction:column; gap:8px; max-width:46ch; }
-  .stats{ margin-top:clamp(40px,5vw,64px); margin-left:-28px; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:1px; background:rgba(247,246,243,0.14); }
-  .stats > div{ background:var(--ink); padding:28px 4px 24px 28px; }
-  .stats .n{ font-size:clamp(40px,6vw,64px); font-weight:800; letter-spacing:-0.045em; line-height:1; }
-  .stats .n small{ font-size:0.42em; font-weight:600; margin-left:4px; color:rgba(247,246,243,0.55); }
-  .stats .n .plus{ font-size:0.42em; font-weight:600; color:var(--accent-lt); }
-  .stats .lb{ font-size:13px; color:rgba(247,246,243,0.55); margin-top:12px; }
-
-  .cols3{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(24px,3vw,40px); }
-  .cols3 .k{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--accent);
-    padding-bottom:16px; border-bottom:1px solid rgba(17,17,20,0.14); margin-bottom:20px; }
-  .cols3 p{ font-size:clamp(15px,1.5vw,16px); color:rgba(17,17,20,0.72); text-wrap:pretty; }
-  .cols3 strong{ color:var(--ink); font-weight:700; }
-
-  .also{ margin-top:clamp(48px,6vw,72px); display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:clamp(20px,3vw,32px); padding-top:32px; border-top:1px solid rgba(17,17,20,0.09); }
-  .also .t{ font-size:15px; font-weight:700; letter-spacing:-0.02em; text-wrap:pretty; }
-  .also p{ font-size:14.5px; color:rgba(17,17,20,0.72); text-wrap:pretty; }
-
-  .steps{ display:flex; flex-direction:column; }
-  .steps > div{ display:grid; grid-template-columns:38px 1fr; gap:16px; padding:24px 0; border-top:1px solid rgba(17,17,20,0.14); }
-  .steps > div:last-child{ border-bottom:1px solid rgba(17,17,20,0.14); }
-  .steps .n{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:rgba(17,17,20,0.4); padding-top:3px; }
-  .steps h3{ font-size:16.5px; font-weight:700; letter-spacing:-0.02em; margin-bottom:6px; }
-  .steps p{ font-size:14.5px; color:rgba(17,17,20,0.62); text-wrap:pretty; }
-
-  .price{ border:1px solid rgba(17,17,20,0.14); border-radius:16px; background:#FFFEFC;
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); overflow:hidden; }
-  .price .l{ padding:clamp(28px,3.4vw,40px); display:flex; flex-direction:column; gap:14px; justify-content:center; }
-  .price .tag{ align-self:flex-start; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em;
-    color:var(--accent); border:1px solid rgba(160,80,30,0.35); padding:5px 12px; border-radius:6px; }
-  .price .amt{ font-size:clamp(38px,5.6vw,54px); font-weight:800; letter-spacing:-0.045em; line-height:1; }
-  .price .amt small{ font-size:0.34em; font-weight:600; color:rgba(17,17,20,0.45); margin-left:6px; }
-  .price .note{ font-size:13.5px; color:rgba(17,17,20,0.5); }
-  .price .r{ padding:clamp(28px,3.4vw,40px); background:#F3F1EC; display:flex; flex-direction:column; gap:14px; }
-  .price .r .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(17,17,20,0.42); margin-bottom:4px; }
-  .price .r div.i{ display:flex; gap:10px; font-size:14.5px; color:rgba(17,17,20,0.78); }
-  .price .r div.i span{ color:var(--accent); }
-
-  .founder{ margin-top:clamp(48px,6vw,72px); padding-top:32px; border-top:1px solid rgba(17,17,20,0.09);
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(20px,3vw,40px); }
-  .founder .nm{ font-size:18px; font-weight:700; letter-spacing:-0.02em; }
-  .founder .rl{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:rgba(17,17,20,0.45); margin-top:4px; }
-  .founder p{ font-size:14.5px; color:rgba(17,17,20,0.68); text-wrap:pretty; }
-
-  .final{ padding:clamp(64px,9vw,112px) 0; }
-  .final h2{ font-weight:800; font-size:clamp(30px,5.2vw,52px); line-height:1.16; letter-spacing:-0.042em;
-    margin-bottom:20px; text-wrap:balance; }
-  .final p{ font-size:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); max-width:40ch; margin-bottom:36px; text-wrap:pretty; }
-  .btn-light{ background:var(--paper); color:var(--ink); }
-  .btn-light:hover{ color:var(--ink); }
-  .btn-ghost{ background:transparent; color:var(--paper); border:1px solid rgba(247,246,243,0.32); }
-  .btn-ghost:hover{ background:rgba(247,246,243,0.08); color:var(--paper); }
-  .btn-ghost span.h{ font-family:'IBM Plex Mono',monospace; font-size:12px; opacity:0.55; }
-
-  footer{ background:var(--ink); color:rgba(247,246,243,0.5); padding:0 0 48px; }
-  footer .inner{ padding-top:36px; border-top:1px solid rgba(247,246,243,0.12); }
-  footer .cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px 40px; font-size:12px; line-height:2; }
-  footer .cols b{ color:var(--paper); font-weight:700; font-size:13px; display:block; margin-bottom:6px; }
-  .refund{ margin-top:28px; padding-top:20px; border-top:1px solid rgba(247,246,243,0.12); }
-  .refund summary{ font-size:12px; cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px; }
-  .refund summary::-webkit-details-marker{ display:none; }
-  .refund summary::before{ content:'+'; font-family:'IBM Plex Mono',monospace; color:var(--accent-lt); }
-  .refund[open] summary::before{ content:'–'; }
-  .refund .body{ margin-top:14px; font-size:11.5px; line-height:1.9; max-width:70ch; display:flex; flex-direction:column; gap:8px; }
-  .refund .body div{ display:flex; gap:8px; }
-  .refund .body div span{ color:var(--accent-lt); }
-  .copy{ margin-top:24px; font-size:11px; color:rgba(247,246,243,0.32); }
-
-  .sticky{ position:fixed; left:0; right:0; bottom:0; z-index:60; background:rgba(247,246,243,0.9);
-    backdrop-filter:blur(14px); border-top:1px solid rgba(17,17,20,0.1);
-    padding:12px clamp(16px,4vw,40px); padding-bottom:calc(12px + env(safe-area-inset-bottom));
-    transition:transform .3s ease; }
-  .sticky.down{ transform:translateY(110%); }
-  .sticky .in{ max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-  .sticky a{ display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:var(--paper);
-    font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:9px; }
-  .sticky a:hover{ color:var(--paper); opacity:0.85; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" as="style" crossorigin="crossorigin" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F6F3; color:#111114;
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    line-height:1.62; letter-spacing:-0.011em; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    word-break:keep-all; overflow-wrap:break-word;
+    font-feature-settings:'tnum' 1; }
+  * { box-sizing:border-box; }
+  h1,h2,h3,h4,p,ul,li,dl,dd,dt { margin:0; padding:0; }
+  li { list-style:none; }
+  img,svg { display:block; max-width:100%; }
+  a { color:#111114; text-decoration:none; }
+  a:hover { color:oklch(0.55 0.15 38); }
+  section[id] { scroll-margin-top:72px; }
+  @media (max-width:768px) { nav[data-hdr-nav] { display:none !important; } }
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#111114"></rect><text x="50" y="58" font-family="sans-serif" font-size="26" font-weight="700" fill="#F7F6F3" text-anchor="middle">J</text></svg></template>
+</helmet>
 
-<header>
-  <div class="wrap">
-    <div class="brand"><b>제이아카데미</b><span class="mono">J ACADEMY</span></div>
-    <a class="head-cta" href="https://open.kakao.com/o/sxtoUwIi" target="_blank" rel="noopener">상담 신청</a>
-  </div>
-</header>
+<div style="background:#F7F6F3; paddingBottom:84px">
 
-<section class="hero">
-  <div class="wrap grid">
-    <div>
-      <h1>광고비가 어디에 얼마나 쓰였는지<br /><span class="dim">확인해보신 적 있나요?</span></h1>
-      <p class="sub">네이버 플레이스·파워링크 광고비를 대행사에 계약기간 단위로 선결제하고 계신 사장님이라면 한 번쯤 궁금하셨을 이야기입니다.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://open.kakao.com/o/sxtoUwIi" target="_blank" rel="noopener">카카오 오픈채팅 상담<span class="ar">→</span></a>
-        <span class="meta">선착순 10명 · 149,000원</span>
+  <header style="position:sticky; top:0; zIndex:50; background:rgba(247,246,243,0.86); backdropFilter:blur(14px) saturate(1.4); borderBottom:1px solid rgba(17,17,20,0.08)">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px); height:64px; display:flex; alignItems:center; justifyContent:space-between">
+      <div style="display:flex; alignItems:baseline; gap:10px">
+        <span style="fontWeight:800; fontSize:16px; letterSpacing:'-0.02em'">제이아카데미</span>
+        <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:10.5px; color:rgba(17,17,20,0.42); letterSpacing:'0.08em'">J ACADEMY</span>
+      </div>
+      <div style="display:flex; alignItems:center; gap:clamp(14px,2vw,26px)">
+        <nav data-hdr-nav="1" style="display:flex; alignItems:center; gap:clamp(14px,2vw,26px)">
+          <a href="#why" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); transition:color .16s ease" style-hover="color:#111114">왜 필요한가</a>
+          <a href="#curriculum" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); transition:color .16s ease" style-hover="color:#111114">강의 내용</a>
+          <a href="#howto" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); transition:color .16s ease" style-hover="color:#111114">진행 방식</a>
+          <a href="#apply" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); transition:color .16s ease" style-hover="color:#111114">수강 안내</a>
+          <a href="./free-resources.html" style="fontSize:13.5px; fontWeight:600; color:oklch(0.55 0.15 38); transition:opacity .16s ease" style-hover="opacity:0.7">무료자료</a>
+        </nav>
+        <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="fontWeight:600; fontSize:13.5px; color:#F7F6F3; background:#111114; padding:9px 18px; borderRadius:8px; whiteSpace:nowrap; transition:opacity .18s ease" style-hover="opacity:0.82; color:#F7F6F3">상담 신청</a>
       </div>
     </div>
-    <div class="card rv">
-      <div class="card-h"><b>광고 정산 내역</b><span>PLACE · POWERLINK</span></div>
-      <div class="row"><span class="lb">노출수</span><span class="val">직접 확인 가능</span></div>
-      <div class="row"><span class="lb">클릭당 비용</span><span class="val">직접 확인 가능</span></div>
-      <div class="row"><span class="lb">예산 소진 비율</span><span class="val">직접 확인 가능</span></div>
-      <div class="row"><span class="lb">설정 항목</span><span class="val">직접 확인 가능</span></div>
-      <div class="card-f">가려진 항목을 눌러보세요 — 확인하는 방법은 강의에서 알려드립니다</div>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section style="border-top:1px solid rgba(17,17,20,0.09)">
-  <div class="wrap two">
-    <div>
-      <h2 class="head">혹시 이런 고민<br />하고 계신가요?</h2>
-    </div>
-    <div class="pain">
-      <div class="rv"><p>계약기간을 정해 광고비를 미리 냈는데 실제로 어디에 쓰이는지는 잘 모르겠다</p></div>
-      <div class="rv"><p>노출이 잘 되고 있다는 말만 들었을 뿐 직접 확인할 방법은 없었다</p></div>
-      <div class="rv"><p>이대로 계속 맡겨야 할지 직접 해봐야 할지 고민이 된다</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="dark">
-  <div class="wrap">
-    <h2 class="head" style="margin-bottom:18px">말이 아니라 데이터로 보여드립니다</h2>
-    <div class="lead">
-      <p>9년간의 실무 경험을 바탕으로 실전 세팅 방법을 그대로 전달합니다.</p>
-      <p>대행사 없이 직접 운영 가능하시도록 만들어 드립니다.</p>
-      <p>편법 프로그램이 아닌 네이버 공식 시스템만을 사용합니다.</p>
-    </div>
-    <div class="stats rv">
-      <div><div class="n">9<small>년간</small></div><div class="lb">네이버 플레이스·파워링크 실무 계정 관리</div></div>
-      <div><div class="n">200<span class="plus">+</span></div><div class="lb">누적 관리 계정 데이터</div></div>
-      <div><div class="n">공식</div><div class="lb">네이버 공식 시스템만 사용</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="head" style="margin-bottom:clamp(36px,4vw,56px)">비용 운영 신뢰<br />세 가지가 바뀝니다</h2>
-    <div class="cols3">
-      <div class="rv">
-        <div class="k">01 / 비용</div>
-        <p>계약기간과 선결제 없이 필요할 때만 운영할 수 있습니다. 업종과 지역에 따라 다르지만 기존 고정 광고비 대비 <strong>40~80% 이상 줄어든</strong> 경우도 다수 확인했습니다.</p>
-      </div>
-      <div class="rv">
-        <div class="k">02 / 운영</div>
-        <p>클릭이 매출로 이어지도록 직접 세팅하고 불필요한 클릭과 예산 소진을 스스로 막을 수 있습니다.</p>
-      </div>
-      <div class="rv">
-        <div class="k">03 / 신뢰</div>
-        <p>사기 피해 걱정 없이 네이버 공식 시스템으로만 운영합니다. 결국 내 업장은 내가 제일 잘 압니다.</p>
-      </div>
-    </div>
-    <div class="also">
-      <p class="t">월별로 계약 기간을 정해서 선결제로 대행사에 돈 내신 분</p>
-      <p>직접 운영은 하고 있지만 노출이 잘 안 되거나 정확한 설정 방법을 모르시는 분</p>
-      <p>대행사에 맡길지 직접 해볼지 아직 결정하지 못하고 알아보는 중이신 분</p>
-    </div>
-  </div>
-</section>
-
-<section style="background:#EFEDE7">
-  <div class="wrap two">
-    <div>
-      <h2 class="head" style="margin-bottom:18px">줌 라이브로<br />지역 제한 없이</h2>
-      <div class="lead" style="max-width:42ch">
-        <p style="font-size:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); text-wrap:pretty">줌(Zoom)은 노트북이나 휴대폰으로 접속하는 화상 강의 프로그램입니다. 링크만 누르면 되고 따로 설치나 준비는 필요하지 않습니다.</p>
-        <p style="font-size:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); text-wrap:pretty">제 화면을 그대로 공유하며 실제 광고 계정을 함께 보면서 세팅 방법을 라이브로 보면서 따라 하실 수 있습니다.</p>
-        <p style="font-size:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); text-wrap:pretty">가게를 비우고 이동할 필요 없이 매장이나 집에서 참여하실 수 있습니다.</p>
-      </div>
-    </div>
-    <div class="steps">
-      <div class="rv">
-        <span class="n">01</span>
-        <div><h3>줌 라이브 강의</h3><p>정해진 시간에 실시간으로 진행됩니다. 녹화본이 아닌 직접 질문할 수 있는 라이브입니다.</p></div>
-      </div>
-      <div class="rv">
-        <span class="n">02</span>
-        <div><h3>PDF 가이드 제공</h3><p>네이버 플레이스·파워링크 등록 방법을 그대로 따라 할 수 있는 자료를 드립니다.</p></div>
-      </div>
-      <div class="rv">
-        <span class="n">03</span>
-        <div><h3>강의 후 1개월 소통방 피드백</h3><p>강의가 끝난 뒤에도 1개월간 소통방에서 실제 운영 화면을 보며 세팅을 점검받고 막히는 부분을 바로 질문할 수 있습니다.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="head" style="margin-bottom:clamp(32px,4vw,48px)">한 번 배우면 업종이 바뀌어도 평생 씁니다</h2>
-    <div class="price rv">
-      <div class="l">
-        <span class="tag">선착순 10명 한정</span>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:-4px">
-          <span class="mono" style="font-size:16px; color:rgba(17,17,20,0.4); text-decoration:line-through; text-decoration-thickness:1.5px">249,000원</span>
-          <span class="mono" style="font-size:12px; font-weight:500; color:#FFFEFC; background:var(--accent); padding:3px 8px; border-radius:5px">40% 할인</span>
+  <!-- HERO -->
+  <section data-screen-label="Hero" style="padding:clamp(56px,9vw,104px) 0 clamp(48px,7vw,80px)">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; gridTemplateColumns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:clamp(40px,5vw,64px); alignItems:end">
+      <div>
+        <h1 style="fontWeight:800; fontSize:clamp(32px,4.4vw,54px); lineHeight:1.16; letterSpacing:'-0.04em'; textWrap:balance; marginBottom:24px">광고비가 어디에 얼마나 쓰였는지<br /><span style="color:rgba(17,17,20,0.48)">확인해보신 적 있나요?</span></h1>
+        <p style="fontSize:clamp(15px,1.6vw,17px); color:rgba(17,17,20,0.62); maxWidth:38ch; textWrap:pretty; marginBottom:36px">네이버 플레이스·파워링크 광고비를 대행사에 계약기간 단위로 선결제하고 계신 사장님이라면 한 번쯤 궁금하셨을 이야기입니다.</p>
+        <div style="display:flex; flexWrap:wrap; alignItems:center; gap:14px 20px">
+          <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="display:inline-flex; alignItems:center; gap:10px; background:#111114; color:#F7F6F3; fontWeight:600; fontSize:15px; padding:16px 26px; borderRadius:10px; transition:transform .18s ease, opacity .18s ease" style-hover="transform:translateY(-2px); color:#F7F6F3">카카오톡 상담<span style="opacity:0.5">→</span></a>
+          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:rgba(17,17,20,0.5)">선착순 {{ seats }}명 · {{ price }}원</span>
         </div>
-        <div class="amt">149,000<small>원</small></div>
-        <p class="note">얼리버드 마감 후 가격이 오를 수 있습니다</p>
-        <a class="btn" style="margin-top:10px; align-self:flex-start" href="https://open.kakao.com/o/sxtoUwIi" target="_blank" rel="noopener">카카오 오픈채팅 상담<span class="ar">→</span></a>
       </div>
-      <div class="r">
-        <p class="k">포함 사항</p>
-        <div class="i"><span>·</span>네이버 플레이스·파워링크 직접 운영 줌 강의</div>
-        <div class="i"><span>·</span>PDF 가이드 + 강의 후 1개월 소통방 피드백</div>
-        <div class="i"><span>·</span>업종이 바뀌어도 평생 활용 가능</div>
-        <div class="i"><span>·</span>지역 제한 없는 온라인 라이브</div>
-      </div>
-    </div>
-    <div class="founder">
-      <div>
-        <div class="nm">강현준</div>
-        <div class="rl">제이컴퍼니 대표 · 제이아카데미</div>
-      </div>
-      <p style="grid-column:span 2">9년간 직접 네이버 플레이스·파워링크를 운영하며 쌓은 데이터를 그대로 전달합니다. 대행사에 맡기지 않아도 사장님이 직접 확인하고 운영할 수 있도록 돕습니다.</p>
-    </div>
-  </div>
-</section>
 
-<section class="dark final" id="final">
-  <div class="wrap">
-    <h2>지금 편하게<br />물어보세요</h2>
-    <p>가격·일정·진행 방식 무엇이든 카카오 오픈채팅으로 상담해드립니다.</p>
-    <div class="cta-row">
-      <a class="btn btn-light" href="https://open.kakao.com/o/sxtoUwIi" target="_blank" rel="noopener">카카오 오픈채팅 상담<span class="ar">→</span></a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/j_academy_official/" target="_blank" rel="noopener noreferrer">인스타그램 보기<span class="h">@j_academy_official</span></a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap inner">
-    <div class="cols">
-      <div>
-        <b>제이컴퍼니</b>
-        <div>대표 강현준 · 사업자등록번호 586-64-00791</div>
-        <div>통신판매업신고번호 2025-화도수동-0617</div>
-        <div>경기도 남양주시 화도읍 맛골로 115, 105동 402호(중흥S-클래스)</div>
-      </div>
-      <div>
-        <div>업태 교육서비스업 / 도매및소매업</div>
-        <div>종목 온라인교육학원 / 전자상거래소매업</div>
-        <div>인스타그램 @j_academy_official</div>
+      <div data-rv="1" style="border:1px solid rgba(17,17,20,0.12); borderRadius:14px; background:#FFFEFC; overflow:hidden">
+        <div style="display:flex; alignItems:center; justifyContent:space-between; padding:16px 20px; borderBottom:1px solid rgba(17,17,20,0.08)">
+          <span style="fontWeight:600; fontSize:13.5px">광고 정산 내역</span>
+          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:10.5px; color:rgba(17,17,20,0.4); letterSpacing:'0.06em'">PLACE · POWERLINK</span>
+        </div>
+        <sc-for list="{{ rows }}" as="row" hint-placeholder-count="4">
+          <div onClick="{{ row.toggle }}" style="display:flex; alignItems:center; justifyContent:space-between; gap:20px; padding:14px 20px; borderBottom:1px solid rgba(17,17,20,0.06); cursor:pointer; transition:background .16s ease" style-hover="background:rgba(17,17,20,0.02)">
+            <span style="fontSize:13.5px; color:rgba(17,17,20,0.68)">{{ row.label }}</span>
+            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12.5px; color:oklch(0.55 0.15 38); transition:filter .4s ease, opacity .4s ease; filter:{{ row.filter }}; opacity:{{ row.opacity }}">직접 확인 가능</span>
+          </div>
+        </sc-for>
+        <div style="padding:14px 20px; fontSize:11.5px; color:rgba(17,17,20,0.42)">가려진 항목을 눌러보세요 — 확인하는 방법은 강의에서 알려드립니다</div>
       </div>
     </div>
-    <details class="refund">
-      <summary>청약철회 및 환불 규정</summary>
-      <div class="body">
-        <p>본 규정은 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 적용되며, 아래 내용과 별개로 소비자는 관련 법령이 정한 권리를 행사할 수 있습니다.</p>
-        <div><span>—</span>결제 완료 후부터 강의 시작 전날 24시까지: 100% 환불 가능 (접수일로부터 3영업일 이내 환급)</div>
-        <div><span>—</span>강의 당일(서비스 개시일) 이후: 환불 불가. 단, 강의 내용이 사전 고지된 내용과 현저히 다르게 제공된 경우 관련 법령에 따라 환불 요청 가능</div>
-        <div><span>—</span>환불 요청은 카카오 오픈프로필을 통해 접수하며, 접수 후 3영업일 이내 처리됩니다</div>
-      </div>
-    </details>
-    <div class="copy">© 2026 J Company. All rights reserved.</div>
-  </div>
-</footer>
+  </section>
 
-<div class="sticky" id="sticky">
-  <div class="in">
-    <span class="meta" style="display:flex; align-items:center; gap:7px">선착순 10명 ·<span style="text-decoration:line-through; color:rgba(17,17,20,0.35)">249,000</span>149,000원</span>
-    <a href="https://open.kakao.com/o/sxtoUwIi" target="_blank" rel="noopener">상담 신청<span class="ar">→</span></a>
-  </div>
+  <!-- 공감 -->
+  <section id="why" data-screen-label="공감" style="padding:clamp(56px,8vw,96px) 0; borderTop:1px solid rgba(17,17,20,0.09)">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; gridTemplateColumns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(32px,4vw,56px)">
+      <div>
+        <h2 style="fontWeight:800; fontSize:clamp(26px,3.6vw,38px); lineHeight:1.24; letterSpacing:'-0.032em'; textWrap:balance">혹시 이런 고민<br />하고 계신가요?</h2>
+      </div>
+      <div style="display:flex; flexDirection:column">
+        <div data-rv="1" style="padding:22px 0; borderTop:1px solid rgba(17,17,20,0.12)">
+          <p style="fontSize:clamp(16px,1.8vw,19px); fontWeight:600; letterSpacing:'-0.02em'; lineHeight:1.5; textWrap:pretty">계약기간을 정해 광고비를 미리 냈는데 실제로 어디에 쓰이는지는 잘 모르겠다</p>
+        </div>
+        <div data-rv="1" style="padding:22px 0; borderTop:1px solid rgba(17,17,20,0.12)">
+          <p style="fontSize:clamp(16px,1.8vw,19px); fontWeight:600; letterSpacing:'-0.02em'; lineHeight:1.5; textWrap:pretty">노출이 잘 되고 있다는 말만 들었을 뿐 직접 확인할 방법은 없었다</p>
+        </div>
+        <div data-rv="1" style="padding:22px 0; borderTop:1px solid rgba(17,17,20,0.12); borderBottom:1px solid rgba(17,17,20,0.12)">
+          <p style="fontSize:clamp(16px,1.8vw,19px); fontWeight:600; letterSpacing:'-0.02em'; lineHeight:1.5; textWrap:pretty">이대로 계속 맡겨야 할지 직접 해봐야 할지 고민이 된다</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 근거 -->
+  <section data-screen-label="근거" style="background:#111114; color:#F7F6F3; padding:clamp(56px,8vw,104px) 0">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px)">
+      <h2 style="fontWeight:800; fontSize:clamp(26px,3.6vw,38px); lineHeight:1.24; letterSpacing:'-0.032em'; marginBottom:18px; textWrap:balance">말이 아니라 데이터로 보여드립니다</h2>
+      <div style="display:flex; flexDirection:column; gap:8px; maxWidth:46ch">
+        <p style="fontSize:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); textWrap:pretty">9년간의 실무 경험을 바탕으로 실전 세팅 방법을 그대로 전달합니다.</p>
+        <p style="fontSize:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); textWrap:pretty">대행사 없이 직접 운영 가능하시도록 만들어 드립니다.</p>
+        <p style="fontSize:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); textWrap:pretty">편법 프로그램이 아닌 네이버 공식 시스템만을 사용합니다.</p>
+      </div>
+      <div style="marginTop:clamp(40px,5vw,64px); marginLeft:-28px; display:grid; gridTemplateColumns:repeat(auto-fit,minmax(180px,1fr)); gap:1px; background:rgba(247,246,243,0.14)">
+        <div style="background:#111114; padding:28px 4px 24px 28px">
+          <div style="fontSize:clamp(40px,6vw,64px); fontWeight:800; letterSpacing:'-0.045em'; lineHeight:1">9<span style="fontSize:0.42em; fontWeight:600; marginLeft:4px; color:rgba(247,246,243,0.55)">년간</span></div>
+          <div style="fontSize:13px; color:rgba(247,246,243,0.55); marginTop:12px">네이버 플레이스·파워링크 실무 계정 관리</div>
+        </div>
+        <div style="background:#111114; padding:28px 4px 24px 28px">
+          <div style="fontSize:clamp(40px,6vw,64px); fontWeight:800; letterSpacing:'-0.045em'; lineHeight:1">200<span style="fontSize:0.42em; fontWeight:600; marginLeft:2px; color:oklch(0.72 0.14 38)">+</span></div>
+          <div style="fontSize:13px; color:rgba(247,246,243,0.55); marginTop:12px">누적 관리 계정 데이터</div>
+        </div>
+        <div style="background:#111114; padding:28px 4px 24px 28px">
+          <div style="fontSize:clamp(40px,6vw,64px); fontWeight:800; letterSpacing:'-0.045em'; lineHeight:1">공식</div>
+          <div style="fontSize:13px; color:rgba(247,246,243,0.55); marginTop:12px">네이버 공식 시스템만 사용</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소구점 -->
+  <section id="curriculum" data-screen-label="소구점" style="padding:clamp(56px,8vw,96px) 0">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px)">
+      <h2 style="fontWeight:800; fontSize:clamp(26px,3.6vw,38px); lineHeight:1.24; letterSpacing:'-0.032em'; marginBottom:clamp(36px,4vw,56px); textWrap:balance">비용 운영 신뢰<br />세 가지가 바뀝니다</h2>
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(24px,3vw,40px)">
+        <div data-rv="1">
+          <div style="fontFamily:'IBM Plex Mono',monospace; fontSize:11.5px; color:oklch(0.55 0.15 38); paddingBottom:16px; borderBottom:1px solid rgba(17,17,20,0.14); marginBottom:20px">01 / 비용</div>
+          <p style="fontSize:clamp(15px,1.5vw,16px); color:rgba(17,17,20,0.72); textWrap:pretty">계약기간과 선결제 없이 필요할 때만 운영할 수 있습니다. 업종과 지역에 따라 다르지만 기존 고정 광고비 대비 <strong style="color:#111114; fontWeight:700">40~80% 이상 줄어든</strong> 경우도 다수 확인했습니다.</p>
+        </div>
+        <div data-rv="1">
+          <div style="fontFamily:'IBM Plex Mono',monospace; fontSize:11.5px; color:oklch(0.55 0.15 38); paddingBottom:16px; borderBottom:1px solid rgba(17,17,20,0.14); marginBottom:20px">02 / 운영</div>
+          <p style="fontSize:clamp(15px,1.5vw,16px); color:rgba(17,17,20,0.72); textWrap:pretty">클릭이 매출로 이어지도록 직접 세팅하고 불필요한 클릭과 예산 소진을 스스로 막을 수 있습니다.</p>
+        </div>
+        <div data-rv="1">
+          <div style="fontFamily:'IBM Plex Mono',monospace; fontSize:11.5px; color:oklch(0.55 0.15 38); paddingBottom:16px; borderBottom:1px solid rgba(17,17,20,0.14); marginBottom:20px">03 / 신뢰</div>
+          <p style="fontSize:clamp(15px,1.5vw,16px); color:rgba(17,17,20,0.72); textWrap:pretty">사기 피해 걱정 없이 네이버 공식 시스템으로만 운영합니다. 결국 내 업장은 내가 제일 잘 압니다.</p>
+        </div>
+      </div>
+
+      <div style="marginTop:clamp(48px,6vw,72px); display:grid; gridTemplateColumns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(20px,3vw,32px); paddingTop:32px; borderTop:1px solid rgba(17,17,20,0.09)">
+        <p style="fontSize:15px; fontWeight:700; letterSpacing:'-0.02em'; textWrap:pretty">월별로 계약 기간을 정해서 선결제로 대행사에 돈 내신 분</p>
+        <p style="fontSize:14.5px; color:rgba(17,17,20,0.72); textWrap:pretty">직접 운영은 하고 있지만 노출이 잘 안 되거나 정확한 설정 방법을 모르시는 분</p>
+        <p style="fontSize:14.5px; color:rgba(17,17,20,0.72); textWrap:pretty">대행사에 맡길지 직접 해볼지 아직 결정하지 못하고 알아보는 중이신 분</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 전달 방식 -->
+  <section id="howto" data-screen-label="전달 방식" style="padding:clamp(56px,8vw,96px) 0; background:#EFEDE7">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; gridTemplateColumns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(32px,4vw,56px)">
+      <div>
+        <h2 style="fontWeight:800; fontSize:clamp(26px,3.6vw,38px); lineHeight:1.24; letterSpacing:'-0.032em'; textWrap:balance; marginBottom:18px">줌 라이브로<br />지역 제한 없이</h2>
+        <div style="display:flex; flexDirection:column; gap:8px; maxWidth:42ch">
+          <p style="fontSize:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); textWrap:pretty">줌(Zoom)은 노트북이나 휴대폰으로 접속하는 화상 강의 프로그램입니다. 링크만 누르면 되고 따로 설치나 준비는 필요하지 않습니다.</p>
+          <p style="fontSize:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); textWrap:pretty">제 화면을 그대로 공유하며 실제 광고 계정을 함께 보면서 세팅 방법을 라이브로 보면서 따라 하실 수 있습니다.</p>
+          <p style="fontSize:clamp(15px,1.6vw,16.5px); color:rgba(17,17,20,0.68); textWrap:pretty">가게를 비우고 이동할 필요 없이 매장이나 집에서 참여하실 수 있습니다.</p>
+        </div>
+      </div>
+      <div style="display:flex; flexDirection:column">
+        <div data-rv="1" style="display:grid; gridTemplateColumns:38px 1fr; gap:16px; padding:24px 0; borderTop:1px solid rgba(17,17,20,0.14)">
+          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:rgba(17,17,20,0.4); paddingTop:3px">01</span>
+          <div>
+            <h3 style="fontSize:16.5px; fontWeight:700; letterSpacing:'-0.02em'; marginBottom:6px">줌 라이브 강의</h3>
+            <p style="fontSize:14.5px; color:rgba(17,17,20,0.62); textWrap:pretty">정해진 시간에 실시간으로 진행됩니다. 녹화본이 아닌 직접 질문할 수 있는 라이브입니다.</p>
+          </div>
+        </div>
+        <div data-rv="1" style="display:grid; gridTemplateColumns:38px 1fr; gap:16px; padding:24px 0; borderTop:1px solid rgba(17,17,20,0.14)">
+          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:rgba(17,17,20,0.4); paddingTop:3px">02</span>
+          <div>
+            <h3 style="fontSize:16.5px; fontWeight:700; letterSpacing:'-0.02em'; marginBottom:6px">PDF 가이드 제공</h3>
+            <p style="fontSize:14.5px; color:rgba(17,17,20,0.62); textWrap:pretty">네이버 플레이스·파워링크 등록 방법을 그대로 따라 할 수 있는 자료를 드립니다.</p>
+          </div>
+        </div>
+        <div data-rv="1" style="display:grid; gridTemplateColumns:38px 1fr; gap:16px; padding:24px 0; borderTop:1px solid rgba(17,17,20,0.14); borderBottom:1px solid rgba(17,17,20,0.14)">
+          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:rgba(17,17,20,0.4); paddingTop:3px">03</span>
+          <div>
+            <h3 style="fontSize:16.5px; fontWeight:700; letterSpacing:'-0.02em'; marginBottom:6px">강의 후 1개월 소통방 피드백</h3>
+            <p style="fontSize:14.5px; color:rgba(17,17,20,0.62); textWrap:pretty">강의가 끝난 뒤에도 1개월간 소통방에서 실제 운영 화면을 보며 세팅을 점검받고 막히는 부분을 바로 질문할 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수강 안내 -->
+  <section id="apply" data-screen-label="수강 안내" style="padding:clamp(56px,8vw,96px) 0">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px)">
+      <h2 style="fontWeight:800; fontSize:clamp(26px,3.6vw,38px); lineHeight:1.24; letterSpacing:'-0.032em'; marginBottom:clamp(32px,4vw,48px); textWrap:balance">한 번 배우면 업종이 바뀌어도 평생 씁니다</h2>
+      <div data-rv="1" style="border:1px solid rgba(17,17,20,0.14); borderRadius:16px; background:#FFFEFC; display:grid; gridTemplateColumns:repeat(auto-fit,minmax(280px,1fr)); overflow:hidden">
+        <div style="padding:clamp(28px,3.4vw,40px); display:flex; flexDirection:column; gap:14px; justifyContent:center">
+          <span style="alignSelf:flex-start; fontFamily:'IBM Plex Mono',monospace; fontSize:11px; letterSpacing:'0.06em'; color:oklch(0.55 0.15 38); border:1px solid oklch(0.55 0.15 38 / 0.35); padding:5px 12px; borderRadius:6px">선착순 {{ seats }}명 한정</span>
+          <div style="display:flex; alignItems:center; gap:10px; marginBottom:-4px">
+            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:16px; color:rgba(17,17,20,0.4); textDecoration:line-through; textDecorationThickness:1.5px">{{ listPrice }}원</span>
+            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#FFFEFC; background:oklch(0.55 0.15 38); padding:3px 8px; borderRadius:5px">{{ discount }}% 할인</span>
+          </div>
+          <div style="fontSize:clamp(38px,5.6vw,54px); fontWeight:800; letterSpacing:'-0.045em'; lineHeight:1">{{ price }}<span style="fontSize:0.34em; fontWeight:600; color:rgba(17,17,20,0.45); marginLeft:6px">원</span></div>
+          <p style="fontSize:13.5px; color:rgba(17,17,20,0.5)">얼리버드 마감 후 가격이 오를 수 있습니다</p>
+          <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="marginTop:10px; display:inline-flex; alignSelf:flex-start; alignItems:center; gap:10px; background:#111114; color:#F7F6F3; fontWeight:600; fontSize:15px; padding:15px 24px; borderRadius:10px; transition:transform .18s ease" style-hover="transform:translateY(-2px); color:#F7F6F3">카카오톡 상담<span style="opacity:0.5">→</span></a>
+        </div>
+        <div style="padding:clamp(28px,3.4vw,40px); background:#F3F1EC; display:flex; flexDirection:column; gap:14px">
+          <p style="fontFamily:'IBM Plex Mono',monospace; fontSize:11px; letterSpacing:'0.08em'; color:rgba(17,17,20,0.42); marginBottom:4px">포함 사항</p>
+          <div style="display:flex; gap:10px; fontSize:14.5px; color:rgba(17,17,20,0.78)"><span style="color:oklch(0.55 0.15 38)">·</span>네이버 플레이스·파워링크 직접 운영 줌 강의</div>
+          <div style="display:flex; gap:10px; fontSize:14.5px; color:rgba(17,17,20,0.78)"><span style="color:oklch(0.55 0.15 38)">·</span>PDF 가이드 + 강의 후 1개월 소통방 피드백</div>
+          <div style="display:flex; gap:10px; fontSize:14.5px; color:rgba(17,17,20,0.78)"><span style="color:oklch(0.55 0.15 38)">·</span>업종이 바뀌어도 평생 활용 가능</div>
+          <div style="display:flex; gap:10px; fontSize:14.5px; color:rgba(17,17,20,0.78)"><span style="color:oklch(0.55 0.15 38)">·</span>지역 제한 없는 온라인 라이브</div>
+        </div>
+      </div>
+
+      <div style="marginTop:clamp(48px,6vw,72px); paddingTop:32px; borderTop:1px solid rgba(17,17,20,0.09); display:grid; gridTemplateColumns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(20px,3vw,40px)">
+        <div>
+          <div style="fontSize:18px; fontWeight:700; letterSpacing:'-0.02em'">강현준</div>
+          <div style="fontFamily:'IBM Plex Mono',monospace; fontSize:11.5px; color:rgba(17,17,20,0.45); marginTop:4px">제이컴퍼니 대표 · 제이아카데미</div>
+        </div>
+        <p style="fontSize:14.5px; color:rgba(17,17,20,0.68); textWrap:pretty; gridColumn:'span 2'">9년간 직접 네이버 플레이스·파워링크를 운영하며 쌓은 데이터를 그대로 전달합니다. 대행사에 맡기지 않아도 사장님이 직접 확인하고 운영할 수 있도록 돕습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section data-screen-label="최종 CTA" style="background:#111114; color:#F7F6F3; padding:clamp(64px,9vw,112px) 0">
+    <div style="maxWidth:1080px; margin:0 auto; padding:0 clamp(20px,4vw,40px)">
+      <h2 style="fontWeight:800; fontSize:clamp(30px,5.2vw,52px); lineHeight:1.16; letterSpacing:'-0.042em'; marginBottom:20px; textWrap:balance">지금 편하게<br />물어보세요</h2>
+      <p style="fontSize:clamp(15px,1.6vw,17px); color:rgba(247,246,243,0.6); maxWidth:40ch; marginBottom:36px; textWrap:pretty">가격·일정·진행 방식 무엇이든 카카오 오픈채팅으로 상담해드립니다.</p>
+      <div style="display:flex; flexWrap:wrap; alignItems:center; gap:14px 24px">
+        <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="display:inline-flex; alignItems:center; gap:10px; background:#F7F6F3; color:#111114; fontWeight:600; fontSize:15px; padding:16px 26px; borderRadius:10px; transition:transform .18s ease" style-hover="transform:translateY(-2px); color:#111114">카카오톡 상담<span style="opacity:0.45">→</span></a>
+        <a href="{{ instaUrl }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; alignItems:center; gap:10px; background:transparent; color:#F7F6F3; fontWeight:600; fontSize:15px; padding:15px 24px; border:1px solid rgba(247,246,243,0.32); borderRadius:10px; transition:transform .18s ease, background .18s ease" style-hover="transform:translateY(-2px); background:rgba(247,246,243,0.08); color:#F7F6F3">인스타그램 보기<span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; opacity:0.55">@j_academy_official</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111114; color:rgba(247,246,243,0.5); padding:0 0 48px">
+    <div style="maxWidth:1080px; margin:0 auto; padding:36px clamp(20px,4vw,40px) 0; borderTop:1px solid rgba(247,246,243,0.12)">
+      <div style="display:grid; gridTemplateColumns:repeat(auto-fit,minmax(260px,1fr)); gap:24px 40px">
+        <div style="fontSize:12px; lineHeight:2">
+          <div style="color:#F7F6F3; fontWeight:700; fontSize:13px; marginBottom:6px">제이컴퍼니</div>
+          <div>대표 강현준 · 사업자등록번호 586-64-00791</div>
+          <div>통신판매업신고번호 2025-화도수동-0617</div>
+          <div>경기도 남양주시 화도읍 맛골로 115, 105동 402호(중흥S-클래스)</div>
+        </div>
+        <div style="fontSize:12px; lineHeight:2">
+          <div>업태 교육서비스업 / 도매및소매업</div>
+          <div>종목 온라인교육학원 / 전자상거래소매업</div>
+          <div>인스타그램 @j_academy_official</div>
+        </div>
+      </div>
+
+      <div style="marginTop:28px; paddingTop:20px; borderTop:1px solid rgba(247,246,243,0.12)">
+        <div onClick="{{ toggleRefund }}" style="fontSize:12px; cursor:pointer; display:flex; alignItems:center; gap:8px"><span style="fontFamily:'IBM Plex Mono',monospace; color:oklch(0.72 0.14 38)">{{ refundSign }}</span>청약철회 및 환불 규정</div>
+        <sc-if value="{{ refundOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="marginTop:14px; fontSize:11.5px; lineHeight:1.9; maxWidth:70ch; display:flex; flexDirection:column; gap:8px">
+            <p>본 규정은 「전자상거래 등에서의 소비자보호에 관한 법률」에 따라 적용되며, 아래 내용과 별개로 소비자는 관련 법령이 정한 권리를 행사할 수 있습니다.</p>
+            <div style="display:flex; gap:8px"><span style="color:oklch(0.72 0.14 38)">—</span>결제 완료 후부터 강의 시작 전날 24시까지: 100% 환불 가능 (접수일로부터 3영업일 이내 환급)</div>
+            <div style="display:flex; gap:8px"><span style="color:oklch(0.72 0.14 38)">—</span>강의 당일(서비스 개시일) 이후: 환불 불가. 단, 강의 내용이 사전 고지된 내용과 현저히 다르게 제공된 경우 관련 법령에 따라 환불 요청 가능</div>
+            <div style="display:flex; gap:8px"><span style="color:oklch(0.72 0.14 38)">—</span>환불 요청은 카카오 오픈프로필을 통해 접수하며, 접수 후 3영업일 이내 처리됩니다</div>
+          </div>
+        </sc-if>
+      </div>
+      <div style="marginTop:24px; fontSize:11px; color:rgba(247,246,243,0.32)">© 2026 J Company. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed; left:0; right:0; bottom:0; zIndex:60; background:rgba(247,246,243,0.9); backdropFilter:blur(14px); borderTop:1px solid rgba(17,17,20,0.1); padding:12px clamp(16px,4vw,40px) calc(12px + env(safe-area-inset-bottom)); transition:transform .3s ease; transform:{{ stickyTransform }}">
+      <div style="maxWidth:1080px; margin:0 auto; display:flex; alignItems:center; justifyContent:space-between; gap:16px">
+        <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; color:rgba(17,17,20,0.55); display:flex; alignItems:center; gap:7px">선착순 {{ seats }}명 ·<span style="textDecoration:line-through; color:rgba(17,17,20,0.35)">{{ listPrice }}</span>{{ price }}원</span>
+        <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="display:inline-flex; alignItems:center; gap:8px; background:#111114; color:#F7F6F3; fontWeight:600; fontSize:14.5px; padding:13px 22px; borderRadius:9px" style-hover="color:#F7F6F3; opacity:0.85">상담 신청<span style="opacity:0.5">→</span></a>
+      </div>
+    </div>
+  </sc-if>
 </div>
 
-<script>
-  document.querySelectorAll('.row').forEach(function(r){
-    r.addEventListener('click', function(){ r.classList.toggle('open'); });
-  });
-  var rv = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;kakaoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://pf.kakao.com/_KGxjSX/friend&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;instaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.instagram.com/j_academy_official/&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { open: {}, refundOpen: false, stickyDown: false };
+
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-rv]'));
+    const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    this.io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { show(e.target); this.io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    rv.forEach(function(el){ io.observe(el); });
-    setTimeout(function(){ rv.forEach(function(el){ el.classList.add('on'); }); }, 2500);
-  } else {
-    rv.forEach(function(el){ el.classList.add('on'); });
+    els.forEach((el) => {
+      if (reduce) return show(el);
+      const r = el.getBoundingClientRect();
+      el.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1)';
+      if (r.top < window.innerHeight * 0.95 && r.bottom > 0) return show(el);
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      this.io.observe(el);
+    });
+    this.rvFallback = setTimeout(() => {
+      els.forEach((el) => { if (el.style.opacity === '0') show(el); });
+    }, 1200);
+
+    const finalCta = document.querySelector('[data-screen-label="최종 CTA"]');
+    if (finalCta) {
+      this.io2 = new IntersectionObserver((es) => {
+        es.forEach((e) => this.setState({ stickyDown: e.isIntersecting }));
+      }, { threshold: 0.1 });
+      this.io2.observe(finalCta);
+    }
   }
-  var sticky = document.getElementById('sticky'), fin = document.getElementById('final');
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){ sticky.classList.toggle('down', e.isIntersecting); });
-    }, { threshold: 0.1 }).observe(fin);
+
+  componentWillUnmount() {
+    if (this.rvFallback) clearTimeout(this.rvFallback);
+    if (this.io) this.io.disconnect();
+    if (this.io2) this.io2.disconnect();
   }
+
+  renderVals() {
+    const labels = ['노출수', '클릭당 비용', '예산 소진 비율', '설정 항목'];
+    const rows = labels.map((label, i) => {
+      const open = !!this.state.open[i];
+      return {
+        label,
+        filter: open ? 'blur(0px)' : 'blur(6px)',
+        opacity: open ? 1 : 0.75,
+        toggle: () => this.setState((s) => ({ open: { ...s.open, [i]: !s.open[i] } }))
+      };
+    });
+    return {
+      rows,
+      kakaoUrl: this.props.kakaoUrl ?? 'https://pf.kakao.com/_KGxjSX/friend',
+      instaUrl: this.props.instaUrl ?? 'https://www.instagram.com/j_academy_official/',
+
+      price: this.props.price ?? '149,000',
+      listPrice: this.props.listPrice ?? '249,000',
+      discount: (() => {
+        const n = (s) => Number(String(s).replace(/[^0-9]/g, ''));
+        const list = n(this.props.listPrice ?? '249,000');
+        const now = n(this.props.price ?? '149,000');
+        return list > now ? Math.round((1 - now / list) * 100) : 0;
+      })(),
+      seats: this.props.seats ?? 10,
+      showSticky: this.props.stickyCta ?? true,
+      stickyTransform: this.state.stickyDown ? 'translateY(110%)' : 'translateY(0)',
+      refundOpen: this.state.refundOpen,
+      refundSign: this.state.refundOpen ? '–' : '+',
+      toggleRefund: () => this.setState((s) => ({ refundOpen: !s.refundOpen }))
+    };
+  }
+}
+
 </script>
 </body>
 </html>
