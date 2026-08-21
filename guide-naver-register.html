@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<title>네이버 플레이스 광고 등록 가이드 | 제이아카데미</title>
+
 <link rel="stylesheet" as="style" crossorigin="crossorigin" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
@@ -25,189 +22,185 @@
   a { color:#111114; text-decoration:none; }
   a:hover { color:oklch(0.55 0.15 38); }
 </style>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#111114"></rect><text x="50" y="60" font-family="sans-serif" font-size="34" font-weight="700" fill="#F7F6F3" text-anchor="middle">P</text></svg></template>
-</helmet>
 
-<div style="background:#F7F6F3; minHeight:100vh">
 
-  <header style="position:sticky; top:0; zIndex:50; background:rgba(247,246,243,0.88); backdropFilter:blur(14px) saturate(1.4); borderBottom:1px solid rgba(17,17,20,0.08)">
-    <div style="maxWidth:840px; margin:0 auto; padding:0 clamp(20px,4vw,40px); height:64px; display:flex; alignItems:center; justifyContent:space-between; gap:16px">
-      <a href="./free-resources.html" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); display:flex; alignItems:center; gap:8px" style-hover="color:#111114"><span style="opacity:0.5">←</span>무료자료</a>
-      <div style="display:flex; alignItems:center; gap:clamp(14px,2.4vw,24px)">
-        <a href="./index.html" style="fontSize:13.5px; fontWeight:500; color:rgba(17,17,20,0.6); whiteSpace:nowrap" style-hover="color:#111114">강의 소개</a>
-        <a href="{{ kakaoUrl }}" target="_blank" rel="noopener" style="fontWeight:600; fontSize:13.5px; color:#F7F6F3; background:#111114; padding:9px 18px; borderRadius:8px; whiteSpace:nowrap; transition:opacity .18s ease" style-hover="opacity:0.82; color:#F7F6F3">상담 신청</a>
+</head>
+<body>
+
+
+<div style="background:#F7F6F3; min-height:100vh">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(247,246,243,0.88); backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid rgba(17,17,20,0.08)">
+    <div style="max-width:840px; margin:0 auto; padding:0 clamp(20px,4vw,40px); height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px">
+      <a href="./free-resources.html" style="font-size:13.5px; font-weight:500; color:rgba(17,17,20,0.6); display:flex; align-items:center; gap:8px"><span style="opacity:0.5">←</span>무료자료</a>
+      <div style="display:flex; align-items:center; gap:clamp(14px,2.4vw,24px)">
+        <a href="./index.html" style="font-size:13.5px; font-weight:500; color:rgba(17,17,20,0.6); white-space:nowrap">강의 소개</a>
+        <a href="https://pf.kakao.com/_KGxjSX/friend" target="_blank" rel="noopener" style="font-weight:600; font-size:13.5px; color:#F7F6F3; background:#111114; padding:9px 18px; border-radius:8px; white-space:nowrap; transition:opacity .18s ease">상담 신청</a>
       </div>
     </div>
   </header>
 
-  <article style="maxWidth:840px; margin:0 auto; padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(64px,8vw,96px)">
-    <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:11px; letterSpacing:'0.1em'; color:rgba(17,17,20,0.42)">FREE GUIDE 01</span>
-    <h1 style="marginTop:14px; fontWeight:800; fontSize:clamp(30px,4.4vw,48px); lineHeight:1.18; letterSpacing:'-0.04em'; textWrap:balance">네이버 플레이스 광고<br />등록 가이드</h1>
-    <p style="marginTop:20px; fontSize:clamp(16px,1.7vw,18px); color:rgba(17,17,20,0.62); maxWidth:46ch; textWrap:pretty">대행사 없이 내 손으로 등록하는 순서입니다. 화면 순서대로 따라오시면 됩니다.</p>
+  <article style="max-width:840px; margin:0 auto; padding:clamp(44px,7vw,80px) clamp(20px,4vw,40px) clamp(64px,8vw,96px)">
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(17,17,20,0.42)">FREE GUIDE 01</span>
+    <h1 style="margin-top:14px; font-weight:800; font-size:clamp(30px,4.4vw,48px); line-height:1.18; letter-spacing:-0.04em; text-wrap:balance">네이버 플레이스 광고<br />등록 가이드</h1>
+    <p style="margin-top:20px; font-size:clamp(16px,1.7vw,18px); color:rgba(17,17,20,0.62); max-width:46ch; text-wrap:pretty">대행사 없이 내 손으로 등록하는 순서입니다. 화면 순서대로 따라오시면 됩니다.</p>
 
-    <div style="marginTop:clamp(36px,4vw,52px); display:flex; flexDirection:column; gap:clamp(32px,3.8vw,44px)">
+    <div style="margin-top:clamp(36px,4vw,52px); display:flex; flex-direction:column; gap:clamp(32px,3.8vw,44px)">
 
-      <section style="display:flex; flexDirection:column; gap:18px">
-        <div style="display:flex; alignItems:center; gap:12px; paddingBottom:12px; borderBottom:1px solid rgba(17,17,20,0.12)">
-          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:10.5px; letterSpacing:'0.1em'; color:oklch(0.55 0.15 38)">PART 1</span>
-          <h2 style="fontWeight:800; fontSize:clamp(21px,2.5vw,28px); letterSpacing:'-0.032em'">시작하기</h2>
+      <section style="display:flex; flex-direction:column; gap:18px">
+        <div style="display:flex; align-items:center; gap:12px; padding-bottom:12px; border-bottom:1px solid rgba(17,17,20,0.12)">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; color:oklch(0.55 0.15 38)">PART 1</span>
+          <h2 style="font-weight:800; font-size:clamp(21px,2.5vw,28px); letter-spacing:-0.032em">시작하기</h2>
         </div>
-        <div style="display:flex; flexDirection:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:22px">
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">1</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">네이버 광고주센터 접속하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">네이버 검색창에 '네이버 광고주센터'를 검색한 뒤, 검색 결과에 나오는 '네이버 통합 광고주센터'를 클릭해 접속합니다. PC 환경에서는 Ctrl 키를 누른 채 마우스 휠을 움직이면 화면을 확대·축소해서 볼 수 있습니다.</p>
-              <img src="./assets/place-step01.png" alt="네이버 광고주센터 검색 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">1</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">네이버 광고주센터 접속하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">네이버 검색창에 '네이버 광고주센터'를 검색한 뒤, 검색 결과에 나오는 '네이버 통합 광고주센터'를 클릭해 접속합니다. PC 환경에서는 Ctrl 키를 누른 채 마우스 휠을 움직이면 화면을 확대·축소해서 볼 수 있습니다.</p>
+              <img src="./assets/place-step01.png" alt="네이버 광고주센터 검색 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">2</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">회원가입 하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">광고주센터 홈페이지 우측 상단의 '회원가입' 버튼을 클릭해 신규 회원으로 가입합니다.</p>
-              <img src="./assets/place-step02.png" alt="회원가입 버튼 위치" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">2</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">회원가입 하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">광고주센터 홈페이지 우측 상단의 '회원가입' 버튼을 클릭해 신규 회원으로 가입합니다.</p>
+              <img src="./assets/place-step02.png" alt="회원가입 버튼 위치" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">3</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">광고 만들기 시작하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">로그인 후 대시보드 화면 좌측 상단의 '광고 만들기' 버튼을 클릭합니다.</p>
-              <img src="./assets/place-step03.png" alt="광고 만들기 버튼 위치" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">3</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">광고 만들기 시작하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">로그인 후 대시보드 화면 좌측 상단의 '광고 만들기' 버튼을 클릭합니다.</p>
+              <img src="./assets/place-step03.png" alt="광고 만들기 버튼 위치" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
         </div>
       </section>
 
-      <section style="display:flex; flexDirection:column; gap:18px">
-        <div style="display:flex; alignItems:center; gap:12px; paddingBottom:12px; borderBottom:1px solid rgba(17,17,20,0.12)">
-          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:10.5px; letterSpacing:'0.1em'; color:oklch(0.55 0.15 38)">PART 2</span>
-          <h2 style="fontWeight:800; fontSize:clamp(21px,2.5vw,28px); letterSpacing:'-0.032em'">플레이스 캠페인 만들기</h2>
+      <section style="display:flex; flex-direction:column; gap:18px">
+        <div style="display:flex; align-items:center; gap:12px; padding-bottom:12px; border-bottom:1px solid rgba(17,17,20,0.12)">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; color:oklch(0.55 0.15 38)">PART 2</span>
+          <h2 style="font-weight:800; font-size:clamp(21px,2.5vw,28px); letter-spacing:-0.032em">플레이스 캠페인 만들기</h2>
         </div>
-        <div style="display:flex; flexDirection:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:22px">
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">4</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">플레이스 검색 선택하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">'빠르게 광고 시작하기' 팝업에서 '플레이스 검색'을 선택한 뒤 '다음' 버튼을 클릭합니다.</p>
-              <img src="./assets/place-step04.png" alt="플레이스 검색 선택 팝업" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">4</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">플레이스 검색 선택하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">'빠르게 광고 시작하기' 팝업에서 '플레이스 검색'을 선택한 뒤 '다음' 버튼을 클릭합니다.</p>
+              <img src="./assets/place-step04.png" alt="플레이스 검색 선택 팝업" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">5</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">캠페인 및 광고그룹 이름 설정하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">캠페인 이름과 캠페인 하루 예산을 입력합니다. 계정에서만 보이는 이름이므로 구분하기 쉬운 이름으로 자유롭게 설정하면 됩니다. 이어서 광고그룹 이름도 입력합니다.</p>
-              <img src="./assets/place-step05.png" alt="캠페인 및 광고그룹 이름 입력 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">5</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">캠페인 및 광고그룹 이름 설정하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">캠페인 이름과 캠페인 하루 예산을 입력합니다. 계정에서만 보이는 이름이므로 구분하기 쉬운 이름으로 자유롭게 설정하면 됩니다. 이어서 광고그룹 이름도 입력합니다.</p>
+              <img src="./assets/place-step05.png" alt="캠페인 및 광고그룹 이름 입력 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">6</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">업체 정보 동의 및 인증하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">노출하고자 하는 플레이스를 연동하기 위해 '동의 후 인증하기' 버튼을 클릭합니다. 광고 클릭당 비용은 우선 기본값(50원)을 그대로 둡니다.</p>
-              <img src="./assets/place-step06.png" alt="업체 정보 동의 후 인증하기 버튼" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">6</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">업체 정보 동의 및 인증하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">노출하고자 하는 플레이스를 연동하기 위해 '동의 후 인증하기' 버튼을 클릭합니다. 광고 클릭당 비용은 우선 기본값(50원)을 그대로 둡니다.</p>
+              <img src="./assets/place-step06.png" alt="업체 정보 동의 후 인증하기 버튼" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">7</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">등록할 업체 선택 후 저장하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">인증 후 나타나는 업체명 목록에서 등록하려는 업체를 선택하고 '저장하기' 버튼을 클릭합니다.</p>
-              <img src="./assets/place-step07.png" alt="업체 선택 후 저장하기" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">7</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">등록할 업체 선택 후 저장하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">인증 후 나타나는 업체명 목록에서 등록하려는 업체를 선택하고 '저장하기' 버튼을 클릭합니다.</p>
+              <img src="./assets/place-step07.png" alt="업체 선택 후 저장하기" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">8</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">홍보 문구 입력하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">업체명은 인증된 이름으로 자동 표시되며, 이름이 바뀌어 보여도 정상이니 당황하지 않아도 됩니다. '홍보 문구' 항목에는 띄어쓰기와 문장부호를 포함해 16자까지 입력할 수 있습니다. '최고', '최대', '최초'처럼 사실 확인이 어려운 표현은 반려될 수 있으니 사용하지 않아야 합니다.</p>
-              <img src="./assets/place-step08.png" alt="홍보 문구 입력 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">8</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">홍보 문구 입력하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">업체명은 인증된 이름으로 자동 표시되며, 이름이 바뀌어 보여도 정상이니 당황하지 않아도 됩니다. '홍보 문구' 항목에는 띄어쓰기와 문장부호를 포함해 16자까지 입력할 수 있습니다. '최고', '최대', '최초'처럼 사실 확인이 어려운 표현은 반려될 수 있으니 사용하지 않아야 합니다.</p>
+              <img src="./assets/place-step08.png" alt="홍보 문구 입력 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
           <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">9</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">광고 이미지 등록하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">'스마트플레이스 이미지 불러오기' 버튼을 클릭해 PC에 저장된 이미지를 업로드합니다. 업로드한 사진의 위치는 우측 '소재 미리보기'를 참고해 알맞게 조절한 뒤 '완료' 버튼을 클릭합니다.</p>
-              <img src="./assets/place-step09.png" alt="광고 이미지 등록 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style="display:flex; flexDirection:column; gap:18px">
-        <div style="display:flex; alignItems:center; gap:12px; paddingBottom:12px; borderBottom:1px solid rgba(17,17,20,0.12)">
-          <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:10.5px; letterSpacing:'0.1em'; color:oklch(0.55 0.15 38)">PART 3</span>
-          <h2 style="fontWeight:800; fontSize:clamp(21px,2.5vw,28px); letterSpacing:'-0.032em'">충전과 검수 확인</h2>
-        </div>
-        <div style="display:flex; flexDirection:column; gap:22px">
-          <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">10</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">비즈머니 충전하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">광고 등록이 완료되면 '비즈머니 충전하기' 버튼을 클릭해 결제를 준비합니다. '첫 광고주 지원 혜택'은 신규 회원 또는 처음 등록하는 사업자에게만 해당되는 항목이므로 아직은 신청하지 않습니다.</p>
-              <img src="./assets/place-step10.png" alt="비즈머니 충전하기 버튼" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
-            </div>
-          </div>
-          <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">11</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">충전 수단 선택하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">현금(네이버페이 계좌 간편결제), 가상계좌 직접입금, 신용/체크카드 중 원하는 결제 수단을 선택해 비즈머니를 충전합니다. 원활한 검수를 위해 5천 원만 우선 충전합니다.</p>
-              <img src="./assets/place-step11.png" alt="충전 수단 선택 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
-            </div>
-          </div>
-          <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">12</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">등록된 캠페인 확인하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">좌측 메뉴에서 '플레이스'를 클릭하면 방금 등록한 캠페인을 확인할 수 있습니다. ON/OFF 토글은 캠페인 전체를 켜고 끄는 기능이므로 현재와 같이 'ON' 상태로 유지해야 합니다.</p>
-              <img src="./assets/place-step12.png" alt="등록된 캠페인 확인 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
-            </div>
-          </div>
-          <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">13</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">캠페인 상세 및 검수 상태 확인하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">캠페인 이름을 클릭하면 상세 화면으로 이동합니다. 광고그룹 상태가 '중지: 비즈채널 검토중'으로 표시되면 정상적으로 검수가 진행되고 있는 것입니다.</p>
-              <img src="./assets/place-step13.png" alt="캠페인 상세 및 검수 상태 확인" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
-            </div>
-          </div>
-          <div style="display:flex; gap:14px">
-            <span style="fontFamily:'IBM Plex Mono',monospace; fontSize:12px; fontWeight:500; color:#F7F6F3; background:#111114; minWidth:26px; height:26px; borderRadius:50%; display:flex; alignItems:center; justifyContent:center; marginTop:2px">14</span>
-            <div style="display:flex; flexDirection:column; gap:8px">
-              <h3 style="fontWeight:700; fontSize:17px; letterSpacing:'-0.022em'">소재 검수 완료 확인하기</h3>
-              <p style="fontSize:15.5px; color:rgba(17,17,20,0.68); textWrap:pretty">가장 중요한 것은 소재 상태입니다. 소재까지 '운영 가능'으로 표시되어야 광고가 실제로 노출됩니다. 검수는 평균 1~3일 소요되며, 반려됐다면 반려 사유를 확인해 해결한 후 다시 신청해야 합니다.</p>
-              <img src="./assets/place-step14.png" alt="소재 검수 완료 확인 화면" style="borderRadius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">9</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">광고 이미지 등록하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">'스마트플레이스 이미지 불러오기' 버튼을 클릭해 PC에 저장된 이미지를 업로드합니다. 업로드한 사진의 위치는 우측 '소재 미리보기'를 참고해 알맞게 조절한 뒤 '완료' 버튼을 클릭합니다.</p>
+              <img src="./assets/place-step09.png" alt="광고 이미지 등록 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
             </div>
           </div>
         </div>
       </section>
 
-      <div style="padding:clamp(22px,2.6vw,28px); background:#EFEDE7; borderRadius:14px">
-        <div style="fontWeight:700; fontSize:15px; marginBottom:8px">자주 하는 실수</div>
-        <p style="fontSize:14.5px; color:rgba(17,17,20,0.65); textWrap:pretty">비즈머니 잔액이 없으면 검수 자체가 진행되지 않습니다. 등록을 마쳤다면 반드시 5천 원 정도는 미리 충전해두세요. 또한 홍보 문구에 '최고', '최대', '최초' 같은 표현을 쓰면 반려되니 피해야 합니다.</p>
+      <section style="display:flex; flex-direction:column; gap:18px">
+        <div style="display:flex; align-items:center; gap:12px; padding-bottom:12px; border-bottom:1px solid rgba(17,17,20,0.12)">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; color:oklch(0.55 0.15 38)">PART 3</span>
+          <h2 style="font-weight:800; font-size:clamp(21px,2.5vw,28px); letter-spacing:-0.032em">충전과 검수 확인</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:22px">
+          <div style="display:flex; gap:14px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">10</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">비즈머니 충전하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">광고 등록이 완료되면 '비즈머니 충전하기' 버튼을 클릭해 결제를 준비합니다. '첫 광고주 지원 혜택'은 신규 회원 또는 처음 등록하는 사업자에게만 해당되는 항목이므로 아직은 신청하지 않습니다.</p>
+              <img src="./assets/place-step10.png" alt="비즈머니 충전하기 버튼" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            </div>
+          </div>
+          <div style="display:flex; gap:14px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">11</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">충전 수단 선택하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">현금(네이버페이 계좌 간편결제), 가상계좌 직접입금, 신용/체크카드 중 원하는 결제 수단을 선택해 비즈머니를 충전합니다. 원활한 검수를 위해 5천 원만 우선 충전합니다.</p>
+              <img src="./assets/place-step11.png" alt="충전 수단 선택 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            </div>
+          </div>
+          <div style="display:flex; gap:14px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">12</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">등록된 캠페인 확인하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">좌측 메뉴에서 '플레이스'를 클릭하면 방금 등록한 캠페인을 확인할 수 있습니다. ON/OFF 토글은 캠페인 전체를 켜고 끄는 기능이므로 현재와 같이 'ON' 상태로 유지해야 합니다.</p>
+              <img src="./assets/place-step12.png" alt="등록된 캠페인 확인 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            </div>
+          </div>
+          <div style="display:flex; gap:14px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">13</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">캠페인 상세 및 검수 상태 확인하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">캠페인 이름을 클릭하면 상세 화면으로 이동합니다. 광고그룹 상태가 '중지: 비즈채널 검토중'으로 표시되면 정상적으로 검수가 진행되고 있는 것입니다.</p>
+              <img src="./assets/place-step13.png" alt="캠페인 상세 및 검수 상태 확인" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            </div>
+          </div>
+          <div style="display:flex; gap:14px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:#F7F6F3; background:#111114; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px">14</span>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <h3 style="font-weight:700; font-size:17px; letter-spacing:-0.022em">소재 검수 완료 확인하기</h3>
+              <p style="font-size:15.5px; color:rgba(17,17,20,0.68); text-wrap:pretty">가장 중요한 것은 소재 상태입니다. 소재까지 '운영 가능'으로 표시되어야 광고가 실제로 노출됩니다. 검수는 평균 1~3일 소요되며, 반려됐다면 반려 사유를 확인해 해결한 후 다시 신청해야 합니다.</p>
+              <img src="./assets/place-step14.png" alt="소재 검수 완료 확인 화면" style="border-radius:10px; border:1px solid rgba(17,17,20,0.1)" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style="padding:clamp(22px,2.6vw,28px); background:#EFEDE7; border-radius:14px">
+        <div style="font-weight:700; font-size:15px; margin-bottom:8px">자주 하는 실수</div>
+        <p style="font-size:14.5px; color:rgba(17,17,20,0.65); text-wrap:pretty">비즈머니 잔액이 없으면 검수 자체가 진행되지 않습니다. 등록을 마쳤다면 반드시 5천 원 정도는 미리 충전해두세요. 또한 홍보 문구에 '최고', '최대', '최초' 같은 표현을 쓰면 반려되니 피해야 합니다.</p>
       </div>
 
     </div>
 
-    <div style="marginTop:clamp(40px,5vw,60px); paddingTop:clamp(28px,3vw,36px); borderTop:1px solid rgba(17,17,20,0.1); display:flex; flexWrap:wrap; gap:12px 14px; alignItems:center">
-      <a href="./guide-powerlink.html" style="display:inline-flex; alignItems:center; gap:10px; background:#111114; color:#F7F6F3; fontWeight:600; fontSize:14.5px; padding:14px 22px; borderRadius:10px; transition:transform .18s ease" style-hover="transform:translateY(-2px); color:#F7F6F3">다음 자료 · 파워링크 등록방법<span style="opacity:0.45">→</span></a>
-      <a href="./free-resources.html" style="fontSize:14px; fontWeight:500; color:rgba(17,17,20,0.55)" style-hover="color:#111114">목록으로</a>
+    <div style="margin-top:clamp(40px,5vw,60px); padding-top:clamp(28px,3vw,36px); border-top:1px solid rgba(17,17,20,0.1); display:flex; flex-wrap:wrap; gap:12px 14px; align-items:center">
+      <a href="./guide-powerlink.html" style="display:inline-flex; align-items:center; gap:10px; background:#111114; color:#F7F6F3; font-weight:600; font-size:14.5px; padding:14px 22px; border-radius:10px; transition:transform .18s ease">다음 자료 · 파워링크 등록방법<span style="opacity:0.45">→</span></a>
+      <a href="./free-resources.html" style="font-size:14px; font-weight:500; color:rgba(17,17,20,0.55)">목록으로</a>
     </div>
   </article>
 
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;kakaoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://pf.kakao.com/_KGxjSX/friend&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
-class Component extends DCLogic {
-  renderVals() {
-    return { kakaoUrl: this.props.kakaoUrl ?? 'https://pf.kakao.com/_KGxjSX/friend' };
-  }
-}
-</script>
+
 </body>
 </html>
